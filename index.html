@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="main">
+    <h1>Random Password Generator</h1>
+    <input type="text" placeholder="Create Password" id="password">
+
+    <table>
+        <th><button id="button" class="btn1" onclick="generatePassword()">Generate</button></th>
+    </table>
+
+</div>
+
+
+    <script>
+
+var password = document.getElementById("password");
+
+function generatePassword() {
+    var char = "a<bcd?efghijk|lmnopq>rstuv]wx{yzABCDEF(GHIJKL)MNOPQR[STUVWXYZ0123456}7/89";
+    var passwordLenght = 8;
+    var password ="";
+
+    for(var i = 0; i <= passwordLenght-1; i++){
+        var randomIndex = Math.floor(Math.random() * char.length);
+        password += char[randomIndex];
+    }
+    document.getElementById("password").value = password
+}
+    </script>
+</body>
+</html>
